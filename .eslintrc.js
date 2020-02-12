@@ -4,11 +4,11 @@ module.exports = {
     es6: true
   },
   extends: [
-    "tslint-plugin-prettier",
-    "tslint-config-prettier",
-    "plugin:prettier/recommended",
     "plugin:react/recommended",
-    "airbnb"
+    "airbnb",
+    "plugin:prettier/recommended",
+    "tslint-plugin-prettier",
+    "tslint-config-prettier"
   ],
   globals: {
     Atomics: "readonly",
@@ -22,8 +22,10 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module"
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "react-hooks"],
   rules: {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     prettier: true
   }
 };

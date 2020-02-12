@@ -2,7 +2,7 @@ import { Reducer } from "redux";
 import { UsersState, UserTypes } from "./types";
 
 const INITIAL_STATE: UsersState = {
-  data: [{ id: 1, name: "Rafael" }],
+  data: [],
   loading: false,
   error: false
 };
