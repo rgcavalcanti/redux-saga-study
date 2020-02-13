@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import { bindActionCreators, Dispatch } from "redux";
-import { connect } from "react-redux";
+import React, { useEffect } from 'react';
+import { bindActionCreators, Dispatch } from 'redux';
+import { connect } from 'react-redux';
 
-import { ApplicationState } from "../../store";
-import { User } from "../../store/ducks/users/types";
-import * as UserActions from "../../store/ducks/users/actions";
+import { ApplicationState } from '../../store';
+import { User } from '../../store/ducks/users/types';
+import * as UserActions from '../../store/ducks/users/actions';
 
 interface StateProps {
   users: User[];
@@ -20,13 +20,13 @@ const UserList = (props: Props) => {
   const { users, loadRequest } = props;
 
   useEffect(() => {
-    loadRequest();
+    () => console.log(users.length);
   }, []);
 
   return (
     <ul>
       {users.map(user => (
-        <li>
+        <li key={user.id}>
           {user.id} - {user.name}
         </li>
       ))}
@@ -35,10 +35,9 @@ const UserList = (props: Props) => {
 };
 
 const mapStateToProps = (state: ApplicationState) => ({
-  users: state.users.data
+  users: state.users.data,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(UserActions, dispatch);
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators(UserActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserList);
