@@ -1,10 +1,10 @@
-import { Reducer } from "redux";
-import { UsersState, UserTypes } from "./types";
+import { Reducer } from 'redux';
+import { UsersState, UserTypes } from './types';
 
 const INITIAL_STATE: UsersState = {
   data: [],
   loading: false,
-  error: false
+  error: false,
 };
 
 const reducer: Reducer<UsersState> = (state = INITIAL_STATE, action) => {
@@ -16,14 +16,14 @@ const reducer: Reducer<UsersState> = (state = INITIAL_STATE, action) => {
         ...state,
         loading: false,
         error: false,
-        data: action.payload.data
+        data: action.payload.data,
       };
     case UserTypes.LOAD_FAILURE:
       return {
         ...state,
         loading: false,
         error: false,
-        data: []
+        data: [],
       };
     default:
       return { ...state };

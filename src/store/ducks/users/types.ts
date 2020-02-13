@@ -1,7 +1,7 @@
 export enum UserTypes {
-  LOAD_REQUEST = "@users/LOAD_REQUEST",
-  LOAD_SUCCESS = "@users/LOAD_SUCCESS",
-  LOAD_FAILURE = "@users/LOAD_FAILURE"
+  LOAD_REQUEST = '@users/LOAD_REQUEST',
+  LOAD_SUCCESS = '@users/LOAD_SUCCESS',
+  LOAD_FAILURE = '@users/LOAD_FAILURE',
 }
 
 export interface User {

@@ -19,9 +19,7 @@ type Props = StateProps & DispatchProps;
 const UserList = (props: Props) => {
   const { users, loadRequest } = props;
 
-  useEffect(() => {
-    () => console.log(users.length);
-  }, []);
+  useEffect(() => loadRequest(), [loadRequest]);
 
   return (
     <ul>
